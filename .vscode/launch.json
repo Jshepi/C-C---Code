@@ -1,0 +1,36 @@
+{
+  // 使用 Visual Studio Code 调试 C/C++ 示例
+  // 包含针对仓库中常见单文件示例的两种配置：dongtai list.c 和 insert list.cpp
+  // 在使用前请确保已使用工作区任务或手动编译生成对应的 exe（见 .github/copilot-instructions.md）
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug dongtai list (gcc)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/Test/dongtai list.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Test",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+      "preLaunchTask": "build-dongtai"
+    },
+    {
+      "name": "Debug insert list (g++)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/Test/insert list.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/Test",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+      "preLaunchTask": "build-insert"
+    }
+  ]
+}
