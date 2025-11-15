@@ -3,7 +3,6 @@
 typedef struct 
 {   int data[Maxsize];
     int length;
-    /* data */
 }SqList;
 void InitList(SqList &L)
 {   
