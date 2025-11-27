@@ -10,7 +10,7 @@ int main() {
     currentYear = current_time->tm_year + 1900;
     
     // 输入出生年份
-    printf("%d\n", currentYear);
+    printf("当前年份：%d\n", currentYear);
     printf("请输入您的出生年份: ");
     scanf("%d", &birthYear);
     
