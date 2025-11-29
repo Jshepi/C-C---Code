@@ -1,24 +1,44 @@
 #include <stdio.h>
-#include <time.h>
+#include <stdlib.h>
+#include <windows.h>
 
 int main() {
-    int birthYear, currentYear, age;
+    int hours, minutes, seconds;
+    int total_seconds;
     
-    // 获取当前年份
-    time_t t = time(NULL);
-    struct tm *current_time = localtime(&t);
-    currentYear = current_time->tm_year + 1900;
+    printf("倒计时程序\n");
+    printf("请输入小时数: ");
+    scanf("%d", &hours);
+    printf("请输入分钟数: ");
+    scanf("%d", &minutes);
+    printf("请输入秒数: ");
+    scanf("%d", &seconds);
     
-    // 输入出生年份
-    printf("当前年份：%d\n", currentYear);
-    printf("请输入您的出生年份: ");
-    scanf("%d", &birthYear);
+    // 计算总秒数
+    total_seconds = hours * 3600 + minutes * 60 + seconds;
     
-    // 计算年龄
-    age = currentYear - birthYear;
+    if (total_seconds <= 0) {
+        printf("输入的时间必须大于0!\n");
+        return 1;
+    }
     
-    // 输出结果
-    printf("您的年龄是: %d 岁\n", age);
+    printf("\n开始倒计时...\n");
+    
+    while (total_seconds > 0) {
+        hours = total_seconds / 3600;
+        minutes = (total_seconds % 3600) / 60;
+        seconds = total_seconds % 60;
+        
+        printf("\r剩余时间: %02d:%02d:%02d", hours, minutes, seconds);
+        fflush(stdout); // 强制刷新输出缓冲区
+        
+        Sleep(1000); // Windows下延时1秒
+        total_seconds--;
+    }
+    
+    printf("\r剩余时间: %02d:%02d:%02d\n", 0, 0, 0);
+    printf("倒计时结束!\a"); // 不再发出声音
+    Beep(3500, 800);// 发出提示音
     
     return 0;
 }
