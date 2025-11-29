@@ -9,7 +9,11 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-lgdi32",
+                "-lcomdlg32",
+                "-lgdiplus",
+                "-lstdc++"
             ],
             "options": {
                 "cwd": "${fileDirname}"
