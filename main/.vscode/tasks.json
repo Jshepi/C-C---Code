@@ -26,6 +26,33 @@
                 "isDefault": true
             },
             "detail": "调试器生成的任务。"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成发布版本",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-O3",
+                "-march=native",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}_release.exe",
+                "-lgdi32",
+                "-lcomdlg32",
+                "-lgdiplus",
+                "-lstdc++"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "detail": "发布版本优化编译。"
         }
     ],
     "version": "2.0.0"
